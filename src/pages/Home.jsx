@@ -6,6 +6,7 @@ import ProjectCard from "../components/ProjectCard";
 // Assets
 import HeroImage from "../assets/hero.png";
 import AboutImage from "../assets/about.png";
+import UpcomingFrame from "../assets/upcoming-frame.svg";
 import Project1Image from "../assets/project1.png";
 import Project2Image from "../assets/project2.png";
 import Project3Image from "../assets/project3.png";
@@ -14,6 +15,8 @@ import EzycopImage from "../assets/ezycop.png";
 import KrishiThumb from "../assets/krishi-thumb.png";
 import ArcVector from "../assets/arc.svg";
 import Blog1Image from "../assets/blog1.png";
+import AboutUsThumbnail from "../assets/about-us-thumbnail.svg";
+
 
 // Hero SVG Assets
 import HeroBg from "../assets/hero-bg.svg"; // Updated to use latest hero-bg.svg
@@ -113,119 +116,142 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ABOUT */}
-        <section id="about" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 sm:gap-12 items-center px-4 sm:px-6">
-            <div className="order-2 md:order-1">
-              <h4 className="text-blue-600 font-semibold mb-2 uppercase tracking-wide text-sm">ABOUT US</h4>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Lorem Ipsum is simply dummy text of the printing</h2>
-              <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered 
-                alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
-                We create diverse, complex, web and mobile solutions for any business need. With us, you get quality 
-                software and perfect service every time.
-              </p>
-              <button className="px-4 sm:px-6 py-2.5 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm sm:text-base">
-                More About Us
-              </button>
-            </div>
-            <div className="relative order-1 md:order-2">
-              <img src={AboutImage} alt="About us" className="rounded-lg shadow-lg w-full" />
-            </div>
+{/* ABOUT */}
+<section id="about" className="py-12 sm:py-16 lg:py-20 bg-white">
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 sm:gap-12 items-center px-4 sm:px-6">
+    
+    {/* Left Content */}
+    <div className="order-2 md:order-1">
+      <h4 className="text-blue-600 font-semibold mb-2 uppercase tracking-wide text-sm">ABOUT US</h4>
+      <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">
+        Lorem Ipsum is simply dummy text of the printing
+      </h2>
+      <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+        There are many variations of passages of Lorem Ipsum available, but the majority have 
+        suffered alteration in some form, by injected humour, or randomised words which don't 
+        look even slightly believable.
+      </p>
+      <p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
+        We create diverse, complex, web and mobile solutions for any business need. With us, 
+        you get quality software and perfect service every time.
+      </p>
+      <button className="px-4 sm:px-6 py-2.5 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm sm:text-base">
+        More About Us
+      </button>
+    </div>
+
+    {/* Right Thumbnail */}
+    <div className="relative order-1 md:order-2">
+      <img
+        src={AboutUsThumbnail}
+        alt="About Us Thumbnail"
+        className="w-full h-auto"
+      />
+    </div>
+  </div>
+</section>
+
+
+
+{/* PROJECTS */}
+<section
+  id="products"
+  className="relative w-full bg-white overflow-hidden"
+  style={{
+    backgroundImage: `url(${UpcomingFrame})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "100% auto", // fill width, keep height
+    backgroundPosition: "top center",
+    minHeight: "1455px", // match your SVG’s height
+  }}
+>
+  <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 sm:py-32 lg:py-40">
+    {/* Section Header */}
+    <div className="text-center mb-14">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Upcoming Preneurs</h2>
+      <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+        We don't just build for others, we build for ourselves too. Here's a sneak peek at what's launching soon.
+      </p>
+    </div>
+
+    {/* My Protector (NO arc) */}
+    <div className="mb-8 relative">
+      <div className="bg-[#35969C] text-white rounded-[30px] p-10 flex flex-col lg:flex-row items-center justify-between shadow-lg relative overflow-hidden">
+        {/* Left content */}
+        <div className="text-left max-w-lg mb-8 lg:mb-0 relative z-10">
+          <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-5 border border-white/30">
+            <img src={Project1Image} alt="My Protector" className="w-10 h-10 object-contain" />
           </div>
-        </section>
+          <h3 className="text-2xl font-bold mb-4">My Protector</h3>
+          <p className="text-white/90 text-base leading-relaxed">
+            A powerful personal security app that lets you instantly connect with verified bodyguards, anytime, anywhere.
+          </p>
+        </div>
 
-        {/* PROJECTS */}
-        <section id="products" className="py-12 sm:py-16 lg:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-8 sm:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Our Upcoming Preneurs</h2>
-              <div className="max-w-4xl mx-auto">
-                <p className="text-gray-600 text-base sm:text-lg">
-                  We don't just build for others, we build for ourselves too. Here's a sneak peek at what's launching soon.
-                </p>
-              </div>
-            </div>
-            
-            {/* First row - My Protector */}
-            <div className="mb-6 sm:mb-8">
-              <div className="bg-[#35969C] text-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 flex flex-col lg:flex-row items-center justify-between shadow-lg relative overflow-hidden min-h-[280px] sm:min-h-[320px]">
-                <div className="text-left lg:flex-1 z-10 max-w-lg mb-4 lg:mb-0">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white bg-opacity-20 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
-                    <img src={Project1Image} alt="My Protector" className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-contain" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">My Protector</h3>
-                  <p className="text-white opacity-90 text-sm sm:text-base leading-relaxed">
-                    A powerful personal security app that lets you instantly connect with verified bodyguards, anytime, anywhere.
-                  </p>
-                </div>
-                <div className="lg:flex-1 flex justify-center lg:justify-end items-end z-10">
-                  <img src={MenBlackSuit} alt="Man in Black Suit" className="h-48 sm:h-64 lg:h-72 w-auto object-contain" />
-                </div>
-                <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-black/5 to-transparent"></div>
-              </div>
-            </div>
+        {/* Illustration */}
+        <div className="flex justify-center lg:justify-end items-end relative z-10">
+          <img src={MenBlackSuit} alt="My Protector Illustration" className="h-72 lg:h-80 object-contain -ml-6" />
+        </div>
+      </div>
+    </div>
 
-            {/* Second row - EzyCop and Krishi Sathi */}
-            <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-              {/* EzyCop */}
-              <div className="bg-[#008CDE] text-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg relative overflow-hidden min-h-[400px] sm:min-h-[480px] flex flex-col">
-                <img 
-                  src={ArcVector} 
-                  alt="" 
-                  className="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 opacity-15 pointer-events-none"
-                  style={{
-                    transform: 'translate(25%, -25%)',
-                    filter: 'brightness(0) invert(1)'
-                  }}
-                />
-                
-                <div className="text-left mb-4 sm:mb-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white bg-opacity-20 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 relative z-10">
-                    <img src={Project2Image} alt="EzyCop" className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-contain" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">EzyCop</h3>
-                  <p className="text-white opacity-90 mb-4 sm:mb-6 text-xs sm:text-sm leading-relaxed">
-                    A powerful personal security app that lets you instantly connect with verified bodyguards, anytime, anywhere.
-                  </p>
-                </div>
-                <div className="flex justify-center mt-auto">
-                  <img src={EzycopImage} alt="EzyCop App" className="w-48 sm:w-56 lg:w-64 h-auto object-contain" />
-                </div>
-              </div>
+    {/* Grid for EzyCop + Krishi Sathi */}
+    <div className="grid md:grid-cols-2 gap-8">
+      {/* EzyCop */}
+      <div className="bg-[#008CDE] text-white rounded-[30px] p-10 shadow-lg relative overflow-hidden flex flex-col justify-between">
+        {/* Arc overlay with blend mode */}
+        <img 
+          src={ArcVector} 
+          alt="" 
+          className="absolute top-0 left-0 w-full object-cover mix-blend-screen pointer-events-none" 
+        />
 
-              {/* Krishi Sathi */}
-              <div className="bg-[#7CD142] text-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg relative overflow-hidden min-h-[400px] sm:min-h-[480px] flex flex-col">
-                <img 
-                  src={ArcVector} 
-                  alt="" 
-                  className="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 opacity-12 pointer-events-none"
-                  style={{
-                    transform: 'translate(25%, -25%)',
-                    filter: 'brightness(0) invert(1)'
-                  }}
-                />
-                
-                <div className="text-left mb-4 sm:mb-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-3 sm:mb-4 relative z-10">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white bg-opacity-30 rounded-full flex items-center justify-center">
-                      <span className="text-white text-lg sm:text-xl">🌱</span>
-                    </div>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">Krishi Sathi</h3>
-                  <p className="text-white opacity-90 mb-4 sm:mb-6 text-xs sm:text-sm leading-relaxed">
-                    Krishify App kisaano ke liye ek agriculture app hai. Is app me kisaan pashupalan, krishi yantra, mausam.
-                  </p>
-                </div>
-                <div className="flex justify-center mt-auto">
-                  <img src={KrishiThumb} alt="Krishi Sathi" className="w-48 sm:w-56 lg:w-64 h-auto object-contain rounded-lg" />
-                </div>
-              </div>
-            </div>
+        {/* Logo + Text */}
+        <div className="relative z-10">
+          <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-5 border border-white/30">
+            <img src={Project2Image} alt="EzyCop" className="w-10 h-10 object-contain" />
           </div>
-        </section>
+          <h3 className="text-xl font-bold mb-3">EzyCop</h3>
+          <p className="text-white/90 text-base leading-relaxed mb-6">
+            A powerful personal security app that lets you instantly connect with verified bodyguards, anytime, anywhere.
+          </p>
+        </div>
+
+        {/* Illustration */}
+        <div className="relative z-10 flex justify-center">
+          <img src={EzycopImage} alt="EzyCop Illustration" className="max-h-64 object-contain" />
+        </div>
+      </div>
+
+      {/* Krishi Sathi */}
+      <div className="bg-[#7CD142] text-white rounded-[30px] p-10 shadow-lg relative overflow-hidden flex flex-col justify-between">
+        {/* Arc overlay with blend mode */}
+        <img 
+          src={ArcVector} 
+          alt="" 
+          className="absolute top-0 left-0 w-full object-cover mix-blend-screen pointer-events-none" 
+        />
+
+        {/* Logo + Text */}
+        <div className="relative z-10">
+          <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-5 border border-white/30">
+            <span className="text-white text-2xl">🌱</span>
+          </div>
+          <h3 className="text-xl font-bold mb-3">Krishi Sathi</h3>
+          <p className="text-white/90 text-base leading-relaxed mb-6">
+            Krishify App kisaano ke liye ek agriculture app hai. Is app me kisaan pashupalan, krishi yantra, mausam.
+          </p>
+        </div>
+
+        {/* Illustration */}
+        <div className="relative z-10 flex justify-center items-end">
+          <img src={KrishiThumb} alt="Krishi Sathi Illustration" className="max-h-72 object-contain" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* BLOG */}
         <section id="news" className="py-12 sm:py-16 lg:py-20 bg-white">
