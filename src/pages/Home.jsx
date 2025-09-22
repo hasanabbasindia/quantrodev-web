@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProjectCard from "../components/ProjectCard";
 
-// Assets
 import HeroImage from "../assets/hero.png";
 import AboutImage from "../assets/about.png";
 import UpcomingFrame from "../assets/upcoming-frame.svg";
@@ -17,14 +16,11 @@ import ArcVector from "../assets/arc.svg";
 import Blog1Image from "../assets/blog1.png";
 import AboutUsThumbnail from "../assets/about-us-thumbnail.svg";
 
-
-// Hero SVG Assets
-import HeroBg from "../assets/hero-bg.svg"; // Updated to use latest hero-bg.svg
+import HeroBg from "../assets/hero-bg.svg";
 import BulbSvg from "../assets/bulb.svg";
 import ArrowGetStarted from "../assets/arrow-getstarted.svg";
 import ReadMoreArrow from "../assets/readmore-arrow.svg";
 
-// Partner Images
 import Partner1Image from "../assets/partner1.png";
 import Partner2Image from "../assets/partner2.png";
 import Partner3Image from "../assets/partner3.png";
