@@ -19,8 +19,7 @@ export default function Footer() {
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
-          {/* Quick Links */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-8">
           <div className="lg:col-span-1">
             <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
             <ul className="space-y-2 sm:space-y-3">
@@ -52,7 +51,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="sm:col-span-2 lg:col-span-2 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl sm:rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+          <div className="sm:col-span-2 lg:col-span-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl sm:rounded-2xl p-6 sm:p-8 relative overflow-hidden">
             {/* Round Cut Decorations */}
             <div className="absolute top-4 sm:top-6 right-4 sm:right-6 w-3 sm:w-4 h-3 sm:h-4 opacity-30">
               <img src={RoundCut} alt="" className="w-full h-full" />
