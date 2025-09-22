@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
 
@@ -10,30 +10,77 @@ const navigationItems = [
 ];
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+      <div className="max-w-7xl mx-auto flex items-center justify-between py-3 sm:py-4 px-4 sm:px-6">
         <Link to="/" aria-label="Go to homepage" className="flex-shrink-0">
-          <img src={Logo} alt="Logo" className="h-10 w-auto" />
+          <img src={Logo} alt="Logo" className="h-8 sm:h-10 w-auto" />
         </Link>
 
-        <nav className="hidden md:flex items-center space-x-8">
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
           {navigationItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-gray-700 hover:text-blue-600 font-medium transition whitespace-nowrap"
+              className="text-gray-700 hover:text-blue-600 font-medium transition whitespace-nowrap text-sm xl:text-base"
             >
               {item.label}
             </a>
           ))}
-          <Link to="/contact" className="ml-4">
-            <button className="px-6 py-2 rounded-lg border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition whitespace-nowrap">
+          <button 
+            onClick={scrollToContact}
+            className="ml-4 px-4 xl:px-6 py-2 rounded-lg border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition whitespace-nowrap text-sm xl:text-base"
+          >
+            Contact Us
+          </button>
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="lg:hidden flex flex-col justify-center items-center w-8 h-8"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          <span className={`block w-6 h-0.5 bg-gray-600 transform transition ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-gray-600 mt-1 transition ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-gray-600 mt-1 transform transition ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+        </button>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t shadow-lg">
+          <nav className="max-w-7xl mx-auto px-4 py-4 space-y-4">
+            {navigationItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="block text-gray-700 hover:text-blue-600 font-medium transition py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+            <button 
+              onClick={scrollToContact}
+              className="w-full mt-4 px-6 py-3 rounded-lg border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition"
+            >
               Contact Us
             </button>
-          </Link>
-        </nav>
-      </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
