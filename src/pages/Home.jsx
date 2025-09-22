@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProjectCard from "../components/ProjectCard";
@@ -26,6 +26,8 @@ const blogPosts = [
 ];
 
 export default function Home() {
+  const [activeDot, setActiveDot] = useState(0);
+
   return (
     <div className="bg-white min-h-screen">
       <Header />
@@ -158,7 +160,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               The Freshest Trending Blog and Articles Keep up
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
               {blogPosts.map((post) => (
                 <article
                   key={post.id}
@@ -174,6 +176,29 @@ export default function Home() {
                   </div>
                 </article>
               ))}
+            </div>
+            
+            {/* Interactive Slider Dots */}
+            <div className="flex justify-center space-x-3 mb-6">
+              {[0, 1, 2, 3].map((index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveDot(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 focus:outline-none focus:ring-2 focus:ring-blue-300 ${
+                    activeDot === index 
+                      ? 'bg-blue-600 shadow-lg' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+            
+            {/* View All Button */}
+            <div className="text-center">
+              <button className="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition font-medium">
+                View All
+              </button>
             </div>
           </div>
         </section>
