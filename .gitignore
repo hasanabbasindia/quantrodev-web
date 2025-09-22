@@ -1,23 +1,51 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+# Node
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# Build outputs
+/build
+/dist
+/.next
+/.cache
+/.vercel
+/.vercel_build_output
+
+# Env files
+.env
+.env.local
+.env.*.local
+.env.production
+.env.production.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors & IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Logs & test
+logs
+*.log
+coverage/
+
+# Mac / Linux
+*.swp
+*~ 
+
+# Misc
+.sass-cache
+.cache/
+EOF
+git add .gitignore
+git commit -m "Add .gitignore"
