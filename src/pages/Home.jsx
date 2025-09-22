@@ -22,6 +22,7 @@ import AboutUsThumbnail from "../assets/about-us-thumbnail.svg";
 import HeroBg from "../assets/hero-bg.svg"; // Updated to use latest hero-bg.svg
 import BulbSvg from "../assets/bulb.svg";
 import ArrowGetStarted from "../assets/arrow-getstarted.svg";
+import ReadMoreArrow from "../assets/readmore-arrow.svg";
 
 // Partner Images
 import Partner1Image from "../assets/partner1.png";
@@ -253,55 +254,132 @@ export default function Home() {
 </section>
 
 
-        {/* BLOG */}
-        <section id="news" className="py-12 sm:py-16 lg:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <h4 className="text-blue-600 font-semibold mb-2 uppercase tracking-wide text-left text-sm">OUR LATEST NEWS</h4>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-left mb-8 sm:mb-12">
-              The Freshest Trending Blog and Articles Keep up
-            </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
-              {blogPosts.map((post) => (
-                <article
-                  key={post.id}
-                  className="bg-white border rounded-lg overflow-hidden shadow hover:shadow-lg transition"
+{/* BLOG */}
+<section id="news" className="relative bg-white py-24 sm:py-28 lg:py-32">
+  <div className="w-full max-w-7xl mx-auto px-6">
+    {/* Section Header */}
+    <div className="mb-14">
+      <p className="text-blue-600 text-sm font-semibold uppercase mb-2">
+        OUR LATEST NEWS
+      </p>
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
+        The Freshest Trending <br className="hidden sm:block" />
+        Blog and Articles Keep up
+      </h2>
+    </div>
+
+    {/* Blog Cards */}
+    <div className="grid md:grid-cols-3 gap-8">
+      {blogPosts.map((post) => (
+        <div
+          key={post.id}
+          className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition"
+        >
+          {/* Thumbnail */}
+          <img
+            src={post.image}
+            alt={post.title}
+            className="w-full h-48 object-cover"
+          />
+
+          {/* Card Content */}
+          <div className="p-6">
+            {/* Meta Info */}
+            <div
+              className="flex items-center text-sm font-medium mb-3"
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                color: "rgba(0,0,0,0.4)", // black 40%
+              }}
+            >
+              {/* Calendar + Date */}
+              <div className="flex items-center mr-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-4 h-4 mr-1"
                 >
-                  <img src={post.image} alt={post.title} className="w-full h-40 sm:h-48 object-cover" />
-                  <div className="p-4 sm:p-6">
-                    <p className="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3">📅 {post.date} 👤 {post.author}</p>
-                    <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4">{post.title}</h3>
-                    <a href="#" className="text-blue-600 font-semibold hover:underline text-sm sm:text-base">
-                      Read More ↗
-                    </a>
-                  </div>
-                </article>
-              ))}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6.75 3v2.25M17.25 3v2.25M3.75 9h16.5M4.5 7.5h15a1.5 1.5 0 011.5 1.5v10.5a1.5 1.5 0 01-1.5 1.5h-15A1.5 1.5 0 013 19.5V9a1.5 1.5 0 011.5-1.5z"
+                  />
+                </svg>
+                <span>{post.date}</span>
+              </div>
+
+              {/* User + Admin */}
+              <div className="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-4 h-4 mr-1"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 20.25a8.25 8.25 0 1115 0v.75H4.5v-.75z"
+                  />
+                </svg>
+                <span>{post.author}</span>
+              </div>
             </div>
-            
-            {/* Interactive Slider Dots */}
-            <div className="flex justify-center space-x-2 sm:space-x-3 mb-4 sm:mb-6">
-              {[0, 1, 2, 3].map((index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveDot(index)}
-                  className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 hover:scale-125 focus:outline-none focus:ring-2 focus:ring-blue-300 ${
-                    activeDot === index 
-                      ? 'bg-blue-600 shadow-lg' 
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-            
-            {/* View All Button */}
-            <div className="text-center">
-              <button className="px-4 sm:px-6 py-2.5 sm:py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition font-medium text-sm sm:text-base">
-                View All
-              </button>
-            </div>
+
+            {/* Title */}
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              {post.title}
+            </h3>
+
+            {/* Read More */}
+            <a
+              href="#"
+              className="inline-flex items-center gap-2"
+              style={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontWeight: 600, // SemiBold
+                fontSize: "20px",
+                lineHeight: "60px",
+                color: "#1D4ED8",
+              }}
+            >
+              Read More
+              <img
+                src={ReadMoreArrow}
+                alt="Read More Arrow"
+                className="w-5 h-5 object-contain"
+              />
+            </a>
           </div>
-        </section>
+        </div>
+      ))}
+    </div>
+
+    {/* Pagination Dots */}
+    <div className="flex justify-center mt-10">
+      <div className="flex space-x-2">
+        <span className="w-2.5 h-2.5 bg-blue-600 rounded-full"></span>
+        <span className="w-2.5 h-2.5 bg-gray-300 rounded-full"></span>
+        <span className="w-2.5 h-2.5 bg-gray-300 rounded-full"></span>
+        <span className="w-2.5 h-2.5 bg-gray-300 rounded-full"></span>
+      </div>
+    </div>
+
+    {/* View All Button */}
+    <div className="flex justify-center mt-8">
+      <button className="px-6 py-2 border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition">
+        View All
+      </button>
+    </div>
+  </div>
+</section>
+
+
       </main>
 
       <Footer />
