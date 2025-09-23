@@ -194,16 +194,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Grid for EzyCop + Krishi Sathi */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              {/* EzyCop */}
-              <div className="bg-[#008CDE] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg relative overflow-hidden min-h-[400px] sm:min-h-[450px] lg:min-h-[500px] flex flex-col justify-between">
-                {/* Arc overlay */}
-                <img 
-                  src={ArcVector} 
-                  alt="" 
-                  className="absolute top-0 left-0 w-full h-full object-cover mix-blend-screen pointer-events-none opacity-70" 
-                />
+{/* Grid for EzyCop + Krishi Sathi */}
+    <div className="grid md:grid-cols-2 gap-8">
+      {/* EzyCop */}
+      <div className="bg-[#008CDE] text-white rounded-[30px] p-10 shadow-lg relative overflow-hidden flex flex-col justify-between">
+        <img src={ArcVector} alt="" className="absolute top-0 left-0 w-full object-cover mix-blend-screen pointer-events-none" />
+
 
                 {/* Logo + Text */}
                 <div className="relative z-10 text-center">
@@ -223,13 +219,9 @@ export default function Home() {
               </div>
 
               {/* Krishi Sathi */}
-              <div className="bg-[#7CD142] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg relative overflow-hidden min-h-[400px] sm:min-h-[450px] lg:min-h-[500px] flex flex-col justify-between">
-                {/* Arc overlay */}
-                <img 
-                  src={ArcVector} 
-                  alt="" 
-                  className="absolute top-0 left-0 w-full h-full object-cover mix-blend-screen pointer-events-none opacity-70" 
-                />
+               <div className="bg-[#7CD142] text-white rounded-[30px] p-10 shadow-lg relative overflow-hidden flex flex-col justify-between">
+        <img src={ArcVector} alt="" className="absolute top-0 left-0 w-full object-cover mix-blend-screen pointer-events-none" />
+
 
                 {/* Logo + Text */}
                 <div className="relative z-10 text-center">
